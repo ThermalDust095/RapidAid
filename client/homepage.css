@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;1,500&family=Noto+Sans:ital,wght@0,500;1,300&family=Poppins:wght@400;500;600;700&family=Roboto:ital,wght@1,300&display=swap');
+
+body{
+    display: block;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: black;
+    margin: 0;
+    font-family: Poppins;
+    font-style: normal;
+    line-height: 55%;
+}
+
+.navbar{
+  display: flex;
+  position: absolute;
+  width: 95%;
+  height: 15.8%;
+  background-color: #DEDCDC;
+  border-radius: 75px 75px 75px 75px;
+  top: 12px;
+  left: 36px;
+}
+
+.navbar h1{
+  position: absolute;
+  top:23px;
+  left: 135px;
+  width: 452px;
+  height: 69px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  font-size: 48px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#nav-icon{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 29px;
+  left: 72px; 
+}
+
+#bars{
+  display: none;
+}
+
+.navbar ul{
+    position: absolute;
+    top: 59px;
+    right: 140px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style-type: none;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.navbar li:hover{
+    cursor: pointer;
+}
+
+
+.home-div{
+    width: 1390px;
+    height: 300vh;
+    background-color: #404040;
+    position: absolute;
+    top: 187px;
+    left: 65px;
+    border-radius: 48px 48px 0px 0px;
+}
+
+.home-div h1{
+    /* position: absolute; */
+    font-size: 36px;
+    font-weight: 600;
+    top: 20px;
+    left: 446px;
+    color: #fff;
+}
+
+#user-wel{
+  padding-left: 450px;
+  padding-top: 50px;
+}
+
+.hospital{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.hospital h1{
+    position: absolute;
+    top: 96px;
+    text-align: center;
+    left: 480px;
+    font-size: 28px;
+}
+
+  #hosp-search{
+    position: absolute;
+    top: 173px;
+    left: 414px;
+    width: 574px;
+    height: 54px;
+    border-radius: 25px;
+}
+
+#hosp-search[type=text]{
+    position: absolute;
+    color: #000;
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 400;
+    padding-left: 12px;
+}
+
+#search{
+    position: absolute;
+    top: 184px;
+    left: 949px;
+    cursor: pointer;
+}
+
+.box{
+  position: relative;
+}
+
+.hospital-card{
+  /* position: absolute; */
+  left: 47px;
+  width: 1298px;
+  /* height: 273px; */
+  background-color: #7d7c7c7c;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 20ms;
+}
+
+/* .hospital-card:hover{
+  border: 3px solid #000;
+} */
+
+.hospital-card h1{
+  /* position: absolute; */
+  top: 40px;
+  left: 350px;
+}
+
+.hos-icon{
+  width: 30px;
+  height: 30px;
+  /* position: absolute; */
+  top: 39px;
+  left: 311px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(354deg) brightness(102%) contrast(102%);
+}
+
+.hos-map{
+  /* position: absolute; */
+  top: 11px;
+  left: 29px;
+  border: 2px solid #000;
+  border-radius: 100%; 
+}
+
+.hos-address{
+  /* position: absolute; */
+  color: #ffffff9f;
+  width: 925px;
+  height: 50px;
+  text-align: justify;
+  top: 93px;
+  left: 310px;
+  line-height: normal;
+}
+
+.hos-cord{
+  /* position: absolute; */
+  color: #ffffff9f;
+  top: 156px;
+  left: 310px;
+}
+
+.hos-ETA{
+  /* position: absolute; */
+  color: #fff;
+  top: 186px;
+  left: 310px;
+}
+
+.hos-submit-btn{
+  position: absolute;
+  right: 98px;
+}
+

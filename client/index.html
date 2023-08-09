@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Ambulance Service</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="ThermalDust095">
+    <meta name="description" content="Ambulance Service for the Needy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="icon" href="favicon.png">
+</head>
+  
+<body>
+
+    <div class="navbar">
+        <h1 id="proj-name">Rapid Aid</h1>
+        <img src="./Assets/siren.png" id="nav-icon">
+        <!-- <i class="fa-solid fa-bars" id="bars"></i> -->
+        <ul class="nav-list">
+            <li id="login">Login</li>
+            <li id="sign-up">Sign Up</li>
+        </ul>
+    </div>
+
+    <div class="login-form">
+        <form>
+            <label for="username" id="user-l">Username:</label>
+            <input type="text" id="user-i" name="username-input">
+            <label for="password" id="pass-l">Password:</label>
+            <input type="password" id="pass-i" name="password-input">
+            <input type="submit" value="Submit" id="submit-btn">
+            <label id="forgot">Forgot Password?</label>
+        </form>
+    </div>
+
+    <div class="register">
+        <h1>Register</h1>
+        <form>
+            <div>
+                <label for="name" id="name-rl">Name: </label><br><br>
+                <input type="text" id="name-ri" name="name-input" class="text-input"><br>
+            </div>
+            <div>
+                <label for="email" id="user-rl">Email:</label><br><br>
+                <input type="text" id="user-ri" name="username-input" class="text-input"><br>
+            </div>
+            <div>
+                <label for="password" id="pass-rl">Password:</label><br><br>
+                <input type="password" id="pass-ri" name="password-input" class="pass-input"><br>
+            </div>
+            <div>
+                <label for="address" id="pass-rl">Address</label><br><br>
+                <input type="text" id="address-ri" name="address-input" class="text-input"><br>
+            </div>
+            <div>
+                <label for="phone" id="phone-rl">Phone:</label><br><br>
+                <input type="text" id="phone-ri" name="phone-input" class="text-input"><br>
+            </div>
+            <div>
+                <label for="text" id="pass-rl">OTP:</label><br><br>
+                <input type="text" id="pass-ri" name="password-input" class="text-input"><br>
+            </div>
+
+            <input type="submit" value="Submit" id="r-submit-btn">
+        </form>
+    </div>
+
+    <img src="./Assets/ambulance.png" id="amb-img">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="./login.js"></script>
+</body>
+</html>

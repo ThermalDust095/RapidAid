@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin - Artify</title>
+	<link rel="stylesheet" href="./assets/css/bootstrap.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/datatables.css">
+	<link rel="icon" href="favicon.png">
+	<style>
+		.box {
+			display: none;
+		}
+		.box:nth-child(1){
+			display: block;
+		}
+
+		main {
+			width: 100vw;
+			min-height: 100vh;
+			display: flex;
+		}
+		.sidebar {
+			width: 25%;
+			min-height: 100%;
+			background: #494949;
+			color: #fff;
+		}
+		.main-content{
+			background: #f1f1f1;
+			width: 100%;
+		}
+		.nav-list {
+			list-style-type: none;
+		}
+		.nav-list li {
+			font-size: 1.3rem;
+			padding: 1rem;
+		}
+		.nav-list li:hover {
+			color: grey;
+			background-color: #393939;
+			cursor: pointer;
+		}
+		.box-container {
+			padding: .5rem;
+		}
+		.box {
+			background-color: #fff;
+			padding: 1rem;
+			height: 100%;
+		}
+		.export-list{
+			display: none;
+			font-size: .5rem;
+		}
+
+		.export-list > *{
+			font-size: .9rem !important;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<aside class="sidebar">
+			<h1 class="p-3">Rapid Aid</h1>
+			<ul class="nav-list mt-2">
+				<li class="" destination="Dashboard">
+					<i class="fas fa-newspaper"></i><span> Dashboard</span>
+				</li>
+				<li class="" destination="history">
+					<i class="fas fa-clock"></i><span> Trips</span>
+				</li>
+				<li class="" destination="pending">
+					<i class="fas fa-exclamation-circle"></i><span> Pending</span>
+				</li>
+				<li class="" destination="profile">
+					<i class="fas fa-user"></i><span> Profile</span>
+				</li>
+				<a>
+					<button class="btn btn-danger mt-2 ml-4" id="logout">
+						<i class="fas fa-power-off"></i> Logout
+					</button>
+				</a>
+			</ul>
+		</aside>
+		<section class="main-content p-2">
+			<div class="box-container">
+				<div class="box" id="Dashboard">
+					<h1>Dashboard</h1>
+					<style>
+					        .cards_ {
+					          display: flex;
+					        }
+					        .card_ {
+					          margin: 2rem;
+					          width: 40%;
+					          height: 8rem;
+					          display: flex;
+					          flex-direction: row;
+					          border-radius: 29px;
+					          background: #e0e0e0;
+					          box-shadow:  21px 21px 42px #b8b8b8,
+					             -21px -21px 42px #ffffff;
+					        }
+					        .card_ img {
+					          height: 6rem;
+					          margin: .8rem;
+					          width: auto;
+					        }
+					      </style>
+					      <div class="container mt-5">
+					        <div class="cards_">
+					          <div class="card_">
+					            <div class="col col-lg-4">
+					              <img src="assets/imgs/customers.png">
+					            </div>
+					            <div class="col col-lg-8 p-3">
+					              <h2>Trips</h2>
+					              <h5 class="text-secondary">116</h5>
+					            </div>
+					          </div>
+
+					          <div class="card_">
+					            <div class="col col-lg-4">
+					              <img src="assets/imgs/transactions.png">
+					            </div>
+					            <div class="col col-lg-8 p-3">
+					              <h2>Rating</h2>
+					              <h5 class="text-secondary">3</h5>
+					            </div>
+					          </div>
+					        </div>
+					        <div class="cards_">
+					          <div class="card_">
+					            <div class="col col-lg-4">
+					              <img src="assets/imgs/033-interaction.png">
+					            </div>
+					            <div class="col col-lg-8 p-3">
+					              <h2>Customers</h2>
+					              <h5 class="text-secondary">25</h5>
+					            </div>
+					          </div>
+
+					          <div class="card_">
+					            <div class="col col-lg-4">
+					              <img src="assets/imgs/count.png">
+					            </div>
+					            <div class="col col-lg-8 p-3">
+					              <h2>Hospitals</h2>
+					              <h5 class="text-secondary">104</h5>
+					            </div>
+					          </div>
+					          </div>
+					        </div>
+				</div>
+				<div class="box" id="history">
+					<h1>Trip History</h1>
+					<div class="container">
+						<table class="table table-striped">
+							<thead>
+								<tr class="bg-dark text-white">
+									<th>ID</th>
+									<th>Name</th>
+									<th>Source</th>
+									<th>Destination</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="ongoing_trips">
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="box" id="pending">
+					<h1>Pending Trips</h1>
+					<div class="container d-flex" id="pending-trip-box">
+						
+					</div>
+				</div>
+				<div class="box" id="profile">
+					<h1>Profile</h1>
+					<form action="?" method="POST">
+						<fieldset class="form-group">
+							<label></label>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(".nav-list").on('click', 'li', function () {
+			let dest = $(this).attr("destination");
+			$(".box").hide();
+			$("#"+dest).show();
+		});
+
+		let output = "";
+		$.ajax({
+			url: "http://localhost/rapid-aid/api/getPendingTrips.php",
+			method: "GET",
+			dataType: "json",
+			success: function (data) {
+				console.log(data)
+				let x = data.data
+				if (x.length > 0) {
+					for(let i = 0; i < x.length; i++){
+						output += `
+								<div class="card m-3" style="width: 18rem;">
+								  <div class="card-body">
+								    <h5 class="card-title name">${x[i].trip_by}</h5>
+								  </div>
+								  <ul class="list-group list-group-flush">
+								    <li class="list-group-item src">${x[i].source}</li>
+								    <li class="list-group-item dest">${x[i].destination}</li>
+								    <li class="list-group-item time">${x[i].timestamp }</li>
+								  </ul>
+								  <div class="card-body d-flex justify-content-between">
+								    <button onclick="acceptTrip(this)" id="acceptTrip" class="btn btn-success">Accept</button>
+								    <button id="rejectTrip" class="btn btn-danger">Reject</button>
+								  </div>
+								</div>
+							`; 
+					}
+					$("#pending-trip-box").html(output);
+				}
+			}
+		})
+
+		function acceptTrip(e) {
+			let mythis = e;
+			let name = $(e).parent().parent().find('.name').text();
+			let src = $(e).parent().parent().find('.src').text();
+			let dest = $(e).parent().parent().find('.dest').html();
+			let time = $(e).parent().parent().find('.time').html();
+			let driver = sessionStorage.getItem('driverName');
+			
+			const data = JSON.stringify({ "name": name, "src":src, "dest":dest, "time": time, "driver": driver});
+
+			$.ajax({
+				url: "http://localhost/rapid-aid/api/acceptTrip.php",
+				data: data,
+				method: "POST",
+				dataType: "json",
+				success: function (data) {
+					window.location = "dashboard.html";
+				},
+				error: function () {
+					window.location = "dashboard.html";
+				}
+			})
+
+		}
+
+		let op = "";
+		$.ajax({
+			url: "http://localhost/rapid-aid/api/getOngoingTrips.php",
+			method: "GET",
+			dataType: "json",
+			success: function (data) {
+				x = data.data;
+				for(let i = 0; i < x.length; i++){
+					op += `
+						<tr>
+							<td>${ x[i].id }</td>
+							<td>${ x[i].client }</td>
+							<td>${ x[i].source }</td>
+							<td>${ x[i].destination }</td>
+							<td>
+								<button class="btn btn-danger" trip-id="${x[i].id}">End Trip</button>
+							</td>
+						</tr>
+					`;
+				}
+				$("#ongoing_trips").html(op);
+			}
+		});
+
+		$("#ongoing_trips").on('click', '.btn', function () {
+			let x = $(this).attr('trip-id');
+			let data = JSON.stringify({"trip-id": x});
+
+			$.ajax({
+				url: "http://localhost/rapid-aid/api/endTrip.php",
+				method: "POST",
+				dataType: "json",
+				data: data,
+				success: function (data) {
+					if (data.status != 'false'){
+						alert("Ended!"); 
+						window.location = "dashboard.html";
+					}
+				}
+			})
+		})
+
+		$("#logout").click(()=>{
+			sessionStorage.setItem('driverLogin', null);
+			window.location = "index.html";
+		});
+	</script>
+</body>
+</html>
