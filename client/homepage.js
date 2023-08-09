@@ -61,7 +61,7 @@ function get_dist(origin,dests){
     url: `https://trueway-matrix.p.rapidapi.com/CalculateDrivingMatrix?${query}`,
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '6dc237b064msh61bd1cc6db391f0p18dad2jsn830977443da3',
+      'X-RapidAPI-Key': '',
       'X-RapidAPI-Host': 'trueway-matrix.p.rapidapi.com'
     }
   }
